@@ -1,0 +1,49 @@
+create table Devices (
+ID int IDENTITY(1,1) not null,
+TYPE nchar(10) not null,
+SN nchar(20) not null,
+STA nchar(10) not null,
+PCODE nchar(20) not null,
+CINFO nchar(20) not null,
+ICCID nchar(20) not null,
+TIME datetime not null
+) 
+
+
+
+create table dps_user(
+ID int IDENTITY(1,1) not null,
+Name nvarchar(20) not null,
+PassWord nvarchar(20) not null,
+UpdataTime datetime not null
+)
+
+create table UpgradeResult(
+ID int IDENTITY(1,1) not null,
+DevType nchar(20) not null,
+DevSN nchar(20) not null,
+FileID nvarchar(20) not null,
+UpgradeTime datetime not null,
+UpFlag int not null,
+DownloadTime datetime not null,
+DownloadFlag int not null
+)
+
+
+create table Session(
+ID int IDENTITY(1,1) not null,
+DevType nvarchar(20) not null,
+SN nvarchar(20) not null,
+Session nvarchar(50) not null
+)
+
+create table UpgradeFileInfo(
+ID int IDENTITY(1,1) not null,
+UpgradeFileType nchar(10) not null,
+FileID nvarchar(50) not null,
+FileSize int not null,
+FileName nvarchar(100) not null,
+FileURL nvarchar(100) not null,
+CreateTime datetime not null,
+UpTime datetime not null
+)
